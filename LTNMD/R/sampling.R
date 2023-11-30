@@ -10,7 +10,7 @@
 #' @return gibbs_sampling function returns a list containing one matrix (N * S) which contains posterior samples of label
 #' @export
 #'
-#' @examples gibbs_sampling(S = 1000, Ya = matrix(c(10, 20, 25), nrow = 1), Yal = matrix(c(8, 12, 11), nrow = 1), K = 20, nu_0 = 10, sigma2_0 = 6)
+#' @examples gibbs_sampling(S = 1000, Ya = matrix(c(10, 20, 25, 8, 12, 20), nrow = 2, byrow = TRUE), Yal = matrix(c(8, 12, 20, 4, 6, 10), nrow = 2, byrow = TRUE), K = 20, nu_0 = 10, sigma2_0 = 6)
 gibbs_sampling <- function(S = 1000, Ya, Yal, K = 20, nu_0 = 10, sigma2_0 = 6){
   # d = L - 1, where L is # of OTUs
   d <- nrow(Ya)
