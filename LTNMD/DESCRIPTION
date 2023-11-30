@@ -1,0 +1,11 @@
+Package: LTNMD
+Type: Package
+Title: Clustering microbiome compositional data
+Version: 0.1.0
+Author: person("Jiongran", "Wang", email = "jw770@tamu.edu", role = c("aut", "cre"))
+Maintainer: Jiongran Wang <jw770@tamu.edu>
+Description: The package applies logistic-tree normal mixture model for clustering microbiome compositional data
+  and return clustering labels
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
