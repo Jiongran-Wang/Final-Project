@@ -1,4 +1,4 @@
-#' Title Calculate the representative cluster label from posterior samples
+#' @title Calculate the representative cluster label from posterior samples
 #'
 #' @param C A matrix (N * S) containing posterior samples of labels
 #' @param burnin The number of samples will be discarded

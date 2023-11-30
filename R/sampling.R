@@ -1,4 +1,4 @@
-#' Title gibbs sampling function
+#' @title Gibbs sampling function
 #'
 #' @param S The number of iterations (default value is 1000)
 #' @param Ya (M * N) matrix containing count data on all internal nodes of binary tree (M) and N is the number of samples (tree)
