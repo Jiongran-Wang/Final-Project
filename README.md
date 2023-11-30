@@ -22,6 +22,8 @@ devtools::install_github("Jiongran-Wang/LTNMD")
 ```{r eval=FALSE}
 require(mvtnorm)
 library(LTNMD)
+
+#################################### data generating ##########################################
 set.seed(1111)
 K = 3 # number of clusters
 M = 6 # number of OTU (number of internal nodes + 1)
@@ -88,6 +90,8 @@ for (j in 1:N){
   Yal[4, j] <- rbinom(1, Ya[4, j], prob = exp(psi[4, j]) / (1 + exp(psi[4, j])))
   Yal[5, j] <- rbinom(1, Ya[5, j], prob = exp(psi[5, j]) / (1 + exp(psi[5, j])))
 }
+
+#################################################################################################
 
 res <- gibbs_sampling(S = 1000, Ya = Ya, Yal = Yal, K = 20) # posterior samples of label 
 predicted_label <- representative_cluster(res, burnin = 500, K = 20)
