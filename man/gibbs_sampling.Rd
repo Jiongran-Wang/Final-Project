@@ -2,7 +2,7 @@
 % Please edit documentation in R/sampling.R
 \name{gibbs_sampling}
 \alias{gibbs_sampling}
-\title{Title gibbs sampling function}
+\title{Gibbs sampling function}
 \usage{
 gibbs_sampling(S = 1000, Ya, Yal, K = 20, nu_0 = 10, sigma2_0 = 6)
 }
@@ -23,7 +23,7 @@ gibbs_sampling(S = 1000, Ya, Yal, K = 20, nu_0 = 10, sigma2_0 = 6)
 gibbs_sampling function returns a list containing one matrix (N * S) which contains posterior samples of label
 }
 \description{
-Title gibbs sampling function
+Gibbs sampling function
 }
 \examples{
 gibbs_sampling(S = 1000, Ya = matrix(c(10, 20, 25, 8, 12, 20), nrow = 2, byrow = TRUE), Yal = matrix(c(8, 12, 20, 4, 6, 10), nrow = 2, byrow = TRUE), K = 20, nu_0 = 10, sigma2_0 = 6)

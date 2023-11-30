@@ -2,7 +2,7 @@
 % Please edit documentation in R/postprocessing.R
 \name{representative_cluster}
 \alias{representative_cluster}
-\title{Title Calculate the representative cluster label from posterior samples}
+\title{Calculate the representative cluster label from posterior samples}
 \usage{
 representative_cluster(C, burnin, K)
 }
@@ -17,7 +17,7 @@ representative_cluster(C, burnin, K)
 A vector containing the representative label
 }
 \description{
-Title Calculate the representative cluster label from posterior samples
+Calculate the representative cluster label from posterior samples
 }
 \examples{
 representative_cluster(C = matrix(sample(10, 5000, replace = TRUE), nrow = 10), burnin = 250, K = 10)
