@@ -1,5 +1,14 @@
-# Final-Project
-Logistic-tree normal mixture model with diagonal covariance matrix
+# LTNMD
+
+- Compositional microbiome data can be characterized by tree structure. LTNMD applies logistic-tree normal mixtures (LTNM) for clustering the data.
+- LTNM seeks to incorporate cross-sample heterogeneity in subcommunity compositions: a characteristic of the data prevalent in most microbiome studies.
+- LTNMD contains two main functions: gibbs_sampling and representative_cluster.
+- gibbs_sampling returns the posterior samples of label.
+- representative_cluster returns the optimal cluster from the posterior samples.
+
+## Notes on input
+- Ya and Yal are matrices with the same dimension and represent the count data of all internal nodes and left child of internal nodes respectively
+- nu_0 and sigma2_0 controls the prior distribution (gamma) of diagonal terms of inverse covariance matrix and we prefer small values
 
 
 
@@ -11,10 +20,11 @@ devtools::install_github("Jiongran-Wang/LTNMD")
 
 ## Toy Example
 ```{r eval=FALSE}
+require(mvtnorm)
 library(LTNMD)
 set.seed(1111)
 K = 3 # number of clusters
-M = 6 # number of OTU
+M = 6 # number of OTU (number of internal nodes + 1)
 N = 300 # number of samples
 
 true_alpha <- c(0.4, 0.8, 0.8, -0.3, -0.5)
@@ -79,7 +89,7 @@ for (j in 1:N){
   Yal[5, j] <- rbinom(1, Ya[5, j], prob = exp(psi[5, j]) / (1 + exp(psi[5, j])))
 }
 
-res <- gibbs_sampling(S = 1000, Ya = Ya, Yal = Yal, K = 20)
+res <- gibbs_sampling(S = 1000, Ya = Ya, Yal = Yal, K = 20) # posterior samples of label 
 predicted_label <- representative_cluster(res, burnin = 500, K = 20)
 
 ```
