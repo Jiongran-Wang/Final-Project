@@ -26,5 +26,5 @@ gibbs_sampling function returns a list containing one matrix (N * S) which conta
 Title gibbs sampling function
 }
 \examples{
-gibbs_sampling(S = 1000, Ya = matrix(c(10, 20, 25), nrow = 1), Yal = matrix(c(8, 12, 11), nrow = 1), K = 20, nu_0 = 10, sigma2_0 = 6)
+gibbs_sampling(S = 1000, Ya = matrix(c(10, 20, 25, 8, 12, 20), nrow = 2, byrow = TRUE), Yal = matrix(c(8, 12, 20, 4, 6, 10), nrow = 2, byrow = TRUE), K = 20, nu_0 = 10, sigma2_0 = 6)
 }

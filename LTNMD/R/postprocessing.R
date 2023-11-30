@@ -7,7 +7,7 @@
 #' @return A vector containing the representative label
 #' @export
 #'
-#' @examples representative_cluster(C = matrix(sample(10, 5000), nrow = 10), burnin = 250, K = 10)
+#' @examples representative_cluster(C = matrix(sample(10, 5000, replace = TRUE), nrow = 10), burnin = 250, K = 10)
 representative_cluster <- function(C, burnin, K){
   N <- nrow(C)
   S <- ncol(C)

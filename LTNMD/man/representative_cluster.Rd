@@ -20,5 +20,5 @@ A vector containing the representative label
 Title Calculate the representative cluster label from posterior samples
 }
 \examples{
-representative_cluster(C = matrix(sample(10, 5000), nrow = 10), burnin = 250, K = 10)
+representative_cluster(C = matrix(sample(10, 5000, replace = TRUE), nrow = 10), burnin = 250, K = 10)
 }
