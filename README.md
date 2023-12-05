@@ -29,15 +29,9 @@ K = 3 # number of clusters
 M = 6 # number of OTU (number of internal nodes + 1)
 N = 300 # number of samples
 
-true_alpha <- c(0.4, 0.8, 0.8, -0.3, -0.5)
-true_beta1 <- c(0.5, 0.3, 1, 1, 1)
-true_beta2 <- c(-0.5, -0.3, -1, -1, -1)
-true_beta3 <- c(0.1, 0.6, -0.1, 0.1, -0.1)
-true_beta <- cbind(true_beta1, true_beta2, true_beta3)
-true_gamma <- c(1, 1, 1, 1, 1)
-mu1 <- true_alpha * (1-true_gamma) + true_beta1 * true_gamma
-mu2 <- true_alpha * (1-true_gamma) + true_beta2 * true_gamma
-mu3 <- true_alpha * (1-true_gamma) + true_beta3 * true_gamma
+mu1 <- c(0.5, 0.6, 0.3, 0.2, 0.3)
+mu2 <- c(0.01, 0.02, 0.04, 0.01, 0.01)
+mu3 <- c(-0.5, -0.4, -0.3, -0.5, -0.5)
 mu <- rbind(mu1, mu2, mu3)
 
 sigma1 <- diag(c(0.001, 0.001, 0.003, 0.003, 0.003))
