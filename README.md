@@ -34,7 +34,7 @@ true_beta1 <- c(0.5, 0.3, 1, 1, 1)
 true_beta2 <- c(-0.5, -0.3, -1, -1, -1)
 true_beta3 <- c(0.1, 0.6, -0.1, 0.1, -0.1)
 true_beta <- cbind(true_beta1, true_beta2, true_beta3)
-true_gamma <- c(1, 0, 1, 1, 1)
+true_gamma <- c(1, 1, 1, 1, 1)
 mu1 <- true_alpha * (1-true_gamma) + true_beta1 * true_gamma
 mu2 <- true_alpha * (1-true_gamma) + true_beta2 * true_gamma
 mu3 <- true_alpha * (1-true_gamma) + true_beta3 * true_gamma
@@ -93,7 +93,8 @@ for (j in 1:N){
 
 #################################################################################################
 
-res <- gibbs_sampling(S = 1000, Ya = Ya, Yal = Yal, K = 20) # posterior samples of label 
-predicted_label <- representative_cluster(res, burnin = 500, K = 20)
+res <- gibbs_sampling(S = 1000, Ya = Ya, Yal = Yal, K = 20) # posterior samples of label
+C <- res$C 
+predicted_label <- representative_cluster(C, burnin = 500, K = 20)
 
 ```
